@@ -86,15 +86,6 @@ def calcular_elementos(a, b):
 
 
 def calcular_pontos(a, b, n=400):
-    """
-    Forma paramétrica:  x = a·cos(t),  y = b·sen(t),  t em [0, 2π].
-
-    Por que paramétrica? Substituindo na equação:
-        (a·cos t)²/a² + (b·sen t)²/b² = cos²t + sen²t = 1
-    então todo t gera um ponto da elipse. Se isolássemos
-    y = ± b·√(1 - x²/a²), os pontos ficariam espaçados demais perto
-    dos vértices (a curva fica quase vertical ali) e o desenho teria falhas.
-    """
     t = np.linspace(0, 2 * np.pi, n)        # N valores igualmente espaçados
     x = a * np.cos(t)
     y = b * np.sin(t)
@@ -106,7 +97,6 @@ def calcular_pontos(a, b, n=400):
 # FORMATAÇÃO DOS TEXTOS DO GRÁFICO
 # ---------------------------------------------------------------------------
 def f(v):
-    """Formata número com até 4 casas, sem zeros sobrando; evita '-0'."""
     return f"{round(v, 4) + 0.0:g}"
 
 
